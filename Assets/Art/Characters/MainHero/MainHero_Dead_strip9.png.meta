@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23d09a65ae879164b899077ef195a256
+guid: 8dd8c77db7302b2419447f6d14e6782a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainHero_Run_strip6_0
+      name: MainHero_Dead_strip9_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f31e128b5e32f1f4ca61e20067d9a7be
-      internalID: 923513404
+      spriteID: 1266e1e928fa24d40a70e13e3ed5b301
+      internalID: -499018364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_1
+      name: MainHero_Dead_strip9_1
       rect:
         serializedVersion: 2
         x: 50
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab05fb1d2c1fc544381e46bf16e7d85d
-      internalID: -2020786122
+      spriteID: 0f7dc7bf4700e0f41bac0a22b98e8327
+      internalID: 1641826074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_2
+      name: MainHero_Dead_strip9_2
       rect:
         serializedVersion: 2
         x: 100
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6127a7509e45071459ed4c2d844407dd
-      internalID: 882552398
+      spriteID: 1323cfad6a44f754e90467de123d1630
+      internalID: -1433978580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_3
+      name: MainHero_Dead_strip9_3
       rect:
         serializedVersion: 2
         x: 150
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ed9b8eb318f4b4db79daf0cd48fe14
-      internalID: -711565912
+      spriteID: b5c71f72e6a62d34d987a6b9885e959e
+      internalID: -1014891608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_4
+      name: MainHero_Dead_strip9_4
       rect:
         serializedVersion: 2
         x: 200
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ece337d846edab4fbc7ae2686c56a70
-      internalID: 1155890395
+      spriteID: 524677feeea43cb41b5e128ca4ebabbd
+      internalID: -117221504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_5
+      name: MainHero_Dead_strip9_5
       rect:
         serializedVersion: 2
         x: 250
@@ -224,8 +224,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 776dee9e990378d4bbfe0e61c6d39602
-      internalID: -49178895
+      spriteID: f0a701cb642d3904c8ea2167bcfef3a7
+      internalID: -260738910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainHero_Dead_strip9_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 50
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae2343d59d637348b20a59924e6eb8e
+      internalID: -2119888734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainHero_Dead_strip9_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 50
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb33e962eb930b44a7312e2529e9422
+      internalID: -875413393
       vertices: []
       indices: 
       edges: []
@@ -241,12 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainHero_Run_strip6_3: -711565912
-      MainHero_Run_strip6_1: -2020786122
-      MainHero_Run_strip6_2: 882552398
-      MainHero_Run_strip6_4: 1155890395
-      MainHero_Run_strip6_5: -49178895
-      MainHero_Run_strip6_0: 923513404
+      MainHero_Dead_strip9_3: -1014891608
+      MainHero_Dead_strip9_5: -260738910
+      MainHero_Dead_strip9_2: -1433978580
+      MainHero_Dead_strip9_0: -499018364
+      MainHero_Dead_strip9_1: 1641826074
+      MainHero_Dead_strip9_7: -875413393
+      MainHero_Dead_strip9_6: -2119888734
+      MainHero_Dead_strip9_4: -117221504
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

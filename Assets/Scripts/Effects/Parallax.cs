@@ -26,7 +26,7 @@ public class Parallax : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float camDeltaY = _mainCam.position.y * _parallaxY;
 

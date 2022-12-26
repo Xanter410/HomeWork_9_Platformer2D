@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23d09a65ae879164b899077ef195a256
+guid: f5670c23b8dadb94499c059292d92150
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainHero_Run_strip6_0
+      name: MainHero_Attack2_strip7_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f31e128b5e32f1f4ca61e20067d9a7be
-      internalID: 923513404
+      spriteID: 7db30a16a87d61a478b6d84358389d97
+      internalID: -291162137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_1
+      name: MainHero_Attack2_strip7_1
       rect:
         serializedVersion: 2
         x: 50
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab05fb1d2c1fc544381e46bf16e7d85d
-      internalID: -2020786122
+      spriteID: 9b0bab37fc209aa4baa86be6e76017c8
+      internalID: -622741237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_2
+      name: MainHero_Attack2_strip7_2
       rect:
         serializedVersion: 2
         x: 100
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6127a7509e45071459ed4c2d844407dd
-      internalID: 882552398
+      spriteID: c2852fe87233b3f42bb6d28465970d2e
+      internalID: 238386527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_3
+      name: MainHero_Attack2_strip7_3
       rect:
         serializedVersion: 2
         x: 150
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3ed9b8eb318f4b4db79daf0cd48fe14
-      internalID: -711565912
+      spriteID: d3c2f7990b97e694282447f00607591f
+      internalID: 49686475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_4
+      name: MainHero_Attack2_strip7_4
       rect:
         serializedVersion: 2
         x: 200
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ece337d846edab4fbc7ae2686c56a70
-      internalID: 1155890395
+      spriteID: 937dee63f0c8c024c9eec46cb6cbcd9d
+      internalID: -281050483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Run_strip6_5
+      name: MainHero_Attack2_strip7_5
       rect:
         serializedVersion: 2
         x: 250
@@ -224,8 +224,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 776dee9e990378d4bbfe0e61c6d39602
-      internalID: -49178895
+      spriteID: 9481ce9316612b747b95acb840bb5421
+      internalID: -679096365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainHero_Attack2_strip7_6
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 50
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638e12896fcac564191ab22a1163cee7
+      internalID: -498171532
       vertices: []
       indices: 
       edges: []
@@ -241,12 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainHero_Run_strip6_3: -711565912
-      MainHero_Run_strip6_1: -2020786122
-      MainHero_Run_strip6_2: 882552398
-      MainHero_Run_strip6_4: 1155890395
-      MainHero_Run_strip6_5: -49178895
-      MainHero_Run_strip6_0: 923513404
+      MainHero_Attack2_strip7_5: -679096365
+      MainHero_Attack2_strip7_4: -281050483
+      MainHero_Attack2_strip7_0: -291162137
+      MainHero_Attack2_strip7_3: 49686475
+      MainHero_Attack2_strip7_6: -498171532
+      MainHero_Attack2_strip7_1: -622741237
+      MainHero_Attack2_strip7_2: 238386527
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
