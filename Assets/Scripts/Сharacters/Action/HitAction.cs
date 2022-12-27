@@ -1,25 +1,26 @@
 using UnityEngine;
 
-[RequireComponent(typeof(RunAction))]
+[RequireComponent(typeof(RunAction), typeof(ContactCheck))]
 public class HitAction : MonoBehaviour, ICharacterAction
 {
     private static readonly int _attacked = Animator.StringToHash("attacked");
 
-    [SerializeField] private GameObject _hitPrefab;
-    [SerializeField] private Transform _rightHitSpawnPoint;
-    [SerializeField] private Transform _leftHitSpawnPoint;
+    [SerializeField] private GameObject _rightHit;
+    [SerializeField] private GameObject _leftHit;
     [SerializeField, Range(0f, 10f)] private float _firingInterval;
-    [SerializeField, Range(0f, 10f)] private float _comboInterval;
-    private float _previousHitTime;
+
     private RunAction _runAction;
     private Animator _animator;
+    private ContactCheck _contact;
+
+    private float _previousHitTime;
     private bool _desiredHit;
-    private int _comboHit;
 
     private void Awake()
     {
         _runAction = GetComponent<RunAction>();
         _animator = GetComponent<Animator>();
+        _contact = GetComponent<ContactCheck>();
     }
 
     private void Start()
@@ -39,18 +40,9 @@ public class HitAction : MonoBehaviour, ICharacterAction
         if (_desiredHit)
         {
             _desiredHit = false;
-            if (_previousHitTime + _firingInterval < Time.time)
+            if (_contact.IsGrounded == true && _previousHitTime + _firingInterval < Time.time)
             {
-                if (_previousHitTime + _comboInterval > Time.time)
-                {
-                    _comboHit++;
-                }
-                else
-                {
-                    _comboHit = 1;
-                }
-
-                _animator.SetInteger(_attacked, _comboHit);
+                _animator.SetBool(_attacked, true);
                 _previousHitTime = Time.time;
                 Hit();
             }
@@ -60,9 +52,9 @@ public class HitAction : MonoBehaviour, ICharacterAction
     private void Hit()
     {
         var hitSpawnPoint = _runAction.Direction == RunAction.FaceDirection.Right
-            ? _rightHitSpawnPoint.position
-            : _leftHitSpawnPoint.position;
+            ? _rightHit
+            : _leftHit;
 
-        //var hitGameObject = Instantiate(_hitPrefab, hitSpawnPoint, Quaternion.identity);
+        hitSpawnPoint.SetActive(true);
     }
 }

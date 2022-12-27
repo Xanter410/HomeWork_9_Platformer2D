@@ -6,6 +6,6 @@ public class AttackAnimator : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetInteger(_attacked, 0);
+        animator.SetBool(_attacked, false);
     }
 }

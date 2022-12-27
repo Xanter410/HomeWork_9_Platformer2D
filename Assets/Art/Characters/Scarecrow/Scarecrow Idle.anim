@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MainHero Jump Up
+  m_Name: Scarecrow Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1327223637, guid: 458142d76ea2af64dbfa8ee44b2adcae, type: 3}
-    - time: 0.083333336
-      value: {fileID: 1327223637, guid: 458142d76ea2af64dbfa8ee44b2adcae, type: 3}
+      value: {fileID: 824921015, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - time: 0.5833333
+      value: {fileID: 1311147680, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - time: 1.25
+      value: {fileID: -1824598735, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - time: 1.8333334
+      value: {fileID: 1410068981, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - time: 2.4166667
+      value: {fileID: 824921015, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,14 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1327223637, guid: 458142d76ea2af64dbfa8ee44b2adcae, type: 3}
-    - {fileID: 1327223637, guid: 458142d76ea2af64dbfa8ee44b2adcae, type: 3}
+    - {fileID: 824921015, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - {fileID: 1311147680, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - {fileID: -1824598735, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - {fileID: 1410068981, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
+    - {fileID: 824921015, guid: c969c065ca30dcb408d6a25b6fed7b83, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 2.4333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

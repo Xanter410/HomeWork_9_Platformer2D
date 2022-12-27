@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8dd8c77db7302b2419447f6d14e6782a
+guid: 97dff2d2ca34b23428cb08296de97631
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainHero_Dead_strip9_0
+      name: Scarecrow_TakeHit_strip4_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1266e1e928fa24d40a70e13e3ed5b301
-      internalID: -499018364
+      spriteID: 81f53f2e59e20b44cb7f673c03f987e5
+      internalID: -428708927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Dead_strip9_1
+      name: Scarecrow_TakeHit_strip4_1
       rect:
         serializedVersion: 2
         x: 50
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f7dc7bf4700e0f41bac0a22b98e8327
-      internalID: 1641826074
+      spriteID: 0447f9980dff4a9429798ff82f056780
+      internalID: -926671832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainHero_Dead_strip9_2
+      name: Scarecrow_TakeHit_strip4_2
       rect:
         serializedVersion: 2
         x: 100
@@ -161,134 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1323cfad6a44f754e90467de123d1630
-      internalID: -1433978580
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainHero_Dead_strip9_3
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 0
-        width: 50
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5c71f72e6a62d34d987a6b9885e959e
-      internalID: -1014891608
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainHero_Dead_strip9_4
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 0
-        width: 50
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 524677feeea43cb41b5e128ca4ebabbd
-      internalID: -117221504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainHero_Dead_strip9_5
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 0
-        width: 50
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0a701cb642d3904c8ea2167bcfef3a7
-      internalID: -260738910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainHero_Dead_strip9_6
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 50
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ae2343d59d637348b20a59924e6eb8e
-      internalID: -2119888734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainHero_Dead_strip9_7
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 0
-        width: 50
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfb33e962eb930b44a7312e2529e9422
-      internalID: -875413393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainHero_Dead_strip9_8
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 50
-        height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1cce637d53b51a469a01a7df5d6144e
-      internalID: 1901517445
+      spriteID: eaa1906f8f10cd642b44cc905071c9aa
+      internalID: -1945206383
       vertices: []
       indices: 
       edges: []
@@ -304,15 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainHero_Dead_strip9_3: -1014891608
-      MainHero_Dead_strip9_8: 1901517445
-      MainHero_Dead_strip9_5: -260738910
-      MainHero_Dead_strip9_2: -1433978580
-      MainHero_Dead_strip9_0: -499018364
-      MainHero_Dead_strip9_1: 1641826074
-      MainHero_Dead_strip9_7: -875413393
-      MainHero_Dead_strip9_6: -2119888734
-      MainHero_Dead_strip9_4: -117221504
+      Scarecrow_TakeHit_strip4_0: -428708927
+      Scarecrow_TakeHit_strip4_2: -1945206383
+      Scarecrow_TakeHit_strip4_1: -926671832
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
