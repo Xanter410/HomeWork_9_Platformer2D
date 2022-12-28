@@ -12,11 +12,11 @@ public class CharacterController : MonoBehaviour
 {
     private readonly List<ICharacterAction> _actions = new List<ICharacterAction>();
 
-    protected UnityAction<Vector2> _onMoveInput;
+    protected UnityAction<float> _onMoveInput;
     protected UnityAction<bool> _onJumpInput;
     protected UnityAction<bool> _onHitInput;
 
-    public event UnityAction<Vector2> OnMoveInput
+    public event UnityAction<float> OnMoveInput
     {
         add { _onMoveInput += value; }
         remove { _onMoveInput -= value; }

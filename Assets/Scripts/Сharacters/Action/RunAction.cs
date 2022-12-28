@@ -45,11 +45,11 @@ public class RunAction : MonoBehaviour, ICharacterAction
     }
 
 
-    private void OnMoveInputHandler(Vector2 input)
+    private void OnMoveInputHandler(float input)
     {
-        _desiredVelocity = new Vector2(input.x, 0f) * Mathf.Max(_maxSpeed - 0.5f, 0f);
+        _desiredVelocity = new Vector2(input, 0f) * Mathf.Max(_maxSpeed - 0.5f, 0f);
 
-        _faceDirection = input.x switch
+        _faceDirection = input switch
         {
             > 0 => FaceDirection.Right,
             < 0 => FaceDirection.Left,
