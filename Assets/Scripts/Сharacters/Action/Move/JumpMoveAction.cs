@@ -1,38 +1,35 @@
 using UnityEngine;
-using static RunAction;
 
 [RequireComponent(typeof(ContactCheck))]
-public class JumpMoveAction : MonoBehaviour, ICharacterAction
+public class JumpMoveAction : BaseMoveAction
 {
     private static readonly int VerticalSpeed = Animator.StringToHash("vSpeed");
     private static readonly int Grounded = Animator.StringToHash("grounded");
     private static readonly int JumpedAnimator = Animator.StringToHash("jumped");
 
-    [SerializeField, Range(0f, 10f)] private float _maxJumpDistance = 3f;
     [SerializeField] private float _maxSpeed = 999f;
+    [SerializeField, Range(0f, 5f)] private float _maxJumpDistant = 3f;
     [SerializeField, Range(0f, 5f)] private float _jumpHeight = 3f;
     [SerializeField, Range(0f, 5f)] private float _downwardMovementMultiplier = 2f;
     [SerializeField, Range(0f, 5f)] private float _upwardMovementMultiplier = 2f;
+    [SerializeField] private float _idleIntervalBetweenJumps = 2f;
 
-    private Animator _animator;
     private Rigidbody2D _rigidbody;
+    private Animator _animator;
     private ContactCheck _contact;
-    private FaceDirection _faceDirection;
     private SpriteRenderer _renderer;
 
     private Vector2 _desiredVelocity;
     private Vector2 _velocity;
     private float _defaultGravityScale, _jumpSpeed;
     private bool _desiredJump, _onGround;
-
-    public FaceDirection Direction => _faceDirection;
+    private float _previousIdleTimeBetweenJumps;
 
     private void Awake()
     {
-        _faceDirection = FaceDirection.Right;
-        _animator = GetComponent<Animator>();
         _renderer = GetComponent<SpriteRenderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _contact = GetComponent<ContactCheck>();
         _defaultGravityScale = 1f;
     }
@@ -44,23 +41,18 @@ public class JumpMoveAction : MonoBehaviour, ICharacterAction
         characterController.OnMoveInput += OnMoveInputHandler;
     }
 
-    private void OnMoveInputHandler(float input)
+    protected override void OnMoveInputHandler(float input)
     {
-        _desiredVelocity = new Vector2(input, 0f) * Mathf.Max(_maxJumpDistance, 0f);
-
-        _faceDirection = input switch
+        if (Mathf.Abs(input) > 0.1)
         {
-            > 0 => FaceDirection.Right,
-            < 0 => FaceDirection.Left,
-            _ => _faceDirection
-        };
+            _desiredVelocity = new Vector2(input, 0f) * Mathf.Max(_maxJumpDistant, 0f);
+            FaceFlipDirection(_renderer, input);
 
-        _renderer.flipX = _faceDirection != FaceDirection.Right;
-
-        _desiredJump = true;
+            _desiredJump = true;
+        }
     }
 
-    public void Run()
+    public override void Run()
     {
         _onGround = _contact.IsGrounded;
         _velocity = _rigidbody.velocity;
@@ -68,8 +60,11 @@ public class JumpMoveAction : MonoBehaviour, ICharacterAction
         if (_desiredJump)
         {
             _desiredJump = false;
-            JumpMove();
-            _animator.SetBool(JumpedAnimator, true);
+
+            if (_previousIdleTimeBetweenJumps + _idleIntervalBetweenJumps < Time.time)
+            {
+                JumpMove();
+            }
         }
 
         if (_rigidbody.velocity.y > 0)
@@ -85,8 +80,6 @@ public class JumpMoveAction : MonoBehaviour, ICharacterAction
             _rigidbody.gravityScale = _defaultGravityScale;
         }
 
-        _rigidbody.velocity = _velocity;
-
         _animator.SetFloat(VerticalSpeed, _velocity.y);
         _animator.SetBool(Grounded, _onGround);
     }
@@ -95,11 +88,19 @@ public class JumpMoveAction : MonoBehaviour, ICharacterAction
     {
         if (_onGround)
         {
+            var velocity = _velocity;
+
+            _animator.SetBool(JumpedAnimator, true);
+
+            _previousIdleTimeBetweenJumps = Time.time;
+
             _jumpSpeed = Mathf.Sqrt(-2f * Physics2D.gravity.y * _jumpHeight);
-            _velocity.y += _jumpSpeed;
+            velocity.y = _jumpSpeed;
 
             var maxSpeedChange = _maxSpeed * Time.deltaTime;
-            _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, maxSpeedChange);
+            velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, maxSpeedChange);
+
+            _rigidbody.velocity = velocity;
         }
     }
 }

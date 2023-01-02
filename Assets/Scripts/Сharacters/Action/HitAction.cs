@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(RunAction), typeof(ContactCheck))]
+[RequireComponent(typeof(BaseMoveAction), typeof(ContactCheck))]
 public class HitAction : MonoBehaviour, ICharacterAction
 {
     private static readonly int _attacked = Animator.StringToHash("attacked");
@@ -9,7 +9,7 @@ public class HitAction : MonoBehaviour, ICharacterAction
     [SerializeField] private GameObject _leftHit;
     [SerializeField, Range(0f, 10f)] private float _firingInterval;
 
-    private RunAction _runAction;
+    private BaseMoveAction _moveAction;
     private Animator _animator;
     private ContactCheck _contact;
 
@@ -18,7 +18,7 @@ public class HitAction : MonoBehaviour, ICharacterAction
 
     private void Awake()
     {
-        _runAction = GetComponent<RunAction>();
+        _moveAction = GetComponent<BaseMoveAction>();
         _animator = GetComponent<Animator>();
         _contact = GetComponent<ContactCheck>();
     }
@@ -27,10 +27,10 @@ public class HitAction : MonoBehaviour, ICharacterAction
     {
         var characterController = GetComponent<CharacterController>();
         characterController.Register(this);
-        characterController.OnHitImput += OnFireInputHandler;
+        characterController.OnHitImput += OnHitInputHandler;
     }
 
-    private void OnFireInputHandler(bool input)
+    private void OnHitInputHandler(bool input)
     {
         _desiredHit |= input;
     }
@@ -51,7 +51,7 @@ public class HitAction : MonoBehaviour, ICharacterAction
 
     private void Hit()
     {
-        var hitSpawnPoint = _runAction.Direction == RunAction.FaceDirection.Right
+        var hitSpawnPoint = _moveAction.Direction == FaceDirection.Right
             ? _rightHit
             : _leftHit;
 

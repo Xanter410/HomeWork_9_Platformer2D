@@ -2,16 +2,14 @@ using System.Diagnostics.Contracts;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyController))]
-public class PatrolBehaviour : MonoBehaviour, IEnemyBehavior
+public class PatrolBehaviour : Behavior
 {
     [SerializeField] private Transform _leftBound;
     [SerializeField] private Transform _rightBound;
     [SerializeField] private float _idleIntervalOnBound = 4f;
-    [SerializeField] private float _idleIntervalBetweenJumps = 2f;
 
     private EnemyController _enemyController;
     private float _previousIdleTimeOnBound;
-    private float _previousIdleTimeBetweenJumps;
     private bool _isIdle;
     private int _boundIndex;
     float boundPosition;
@@ -22,7 +20,21 @@ public class PatrolBehaviour : MonoBehaviour, IEnemyBehavior
         _enemyController = GetComponent<EnemyController>();
     }
 
-    public void Execute()
+    public override bool Evaluate()
+    {
+
+        if (_isIdle && _previousIdleTimeOnBound + _idleIntervalOnBound > Time.time)
+        {
+            return false;
+        }
+        else
+        {
+            _isIdle = false;
+            return true;
+        }
+    }
+
+    public override void Execute()
     {
         boundPosition = _boundIndex == 0 ? _leftBound.position.x : _rightBound.position.x;
         boundDirection = boundPosition - transform.position.x;
@@ -33,13 +45,10 @@ public class PatrolBehaviour : MonoBehaviour, IEnemyBehavior
 
             _isIdle = true;
             _previousIdleTimeOnBound = Time.time;
+
+            _enemyController.OnMoveInputHandler(0);
+            return;
         }
-
-        if (_isIdle == true && _previousIdleTimeOnBound + _idleIntervalOnBound > Time.time) return;
-        _isIdle = false;
-
-        if (_previousIdleTimeBetweenJumps + _idleIntervalBetweenJumps > Time.time) return;
-        _previousIdleTimeBetweenJumps = Time.time;
 
         if (boundDirection >= 0)
         {

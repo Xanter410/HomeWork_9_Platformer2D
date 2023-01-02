@@ -1,19 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
-
-public interface IEnemyBehavior
-{
-    public void Execute();
-}
 
 public class AIController : MonoBehaviour
 {
-    private IEnemyBehavior[] _behaviors;
+    [SerializeField] private Behavior[] _behaviors;
     private int length;
-
-    private void Awake()
-    {
-        _behaviors = GetComponents<IEnemyBehavior>();
-    }
 
     void Start()
     {
@@ -24,7 +15,11 @@ public class AIController : MonoBehaviour
     {
         for (int i = 0; i < length; i++)
         {
-            _behaviors[i].Execute();
+            if (_behaviors[i].Evaluate() == true)
+            {
+                _behaviors[i].Execute();
+                break;
+            }
         }
     }
 }

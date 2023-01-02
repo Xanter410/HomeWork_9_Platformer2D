@@ -1,10 +1,19 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyController : CharacterController
 {
     private HealthPoint healthPoint;
     private AIController AIController;
+
+    protected UnityAction<bool> _onDashInput;
+
+    public event UnityAction<bool> OnDashInput
+    {
+        add { _onDashInput += value; }
+        remove { _onDashInput -= value; }
+    }
 
     private void Awake()
     {
@@ -28,9 +37,14 @@ public class EnemyController : CharacterController
         _onJumpInput?.Invoke(true);
     }
 
-    public void OnFireInputHandler()
+    public void OnAttackInputHandler()
     {
         _onHitInput?.Invoke(true);
+    }
+
+    public void OnDashInputHandler()
+    {
+        _onDashInput?.Invoke(true);
     }
 
     private void Start()
