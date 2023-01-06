@@ -31,6 +31,8 @@ public class RunAction : BaseMoveAction
     }
     protected override void OnMoveInputHandler(float input)
     {
+        if (input > 0) input = 1;
+        if (input < 0) input = -1;
         _desiredVelocity = new Vector2(input, 0f) * Mathf.Max(_maxSpeed, 0f);
         FaceFlipDirection(_renderer, input);
     }

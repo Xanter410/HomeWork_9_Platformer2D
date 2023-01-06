@@ -20,7 +20,7 @@ public abstract class BaseTriggerDamage : MonoBehaviour
 
     private void EvaluateCollision(GameObject go)
     {
-        if (go.CompareTag("Player") == _doPlayerTakeDamage || go.CompareTag("Enemy") == _doEnemyTakeDamage)
+        if ((go.CompareTag("Player") && _doPlayerTakeDamage) || (go.CompareTag("Enemy") && _doEnemyTakeDamage))
         {
             if (go.TryGetComponent<HealthPoint>(out var characterHealthPoint))
             {

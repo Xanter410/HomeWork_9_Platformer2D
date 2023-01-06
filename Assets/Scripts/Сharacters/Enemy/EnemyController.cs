@@ -1,11 +1,12 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class EnemyController : CharacterController
 {
-    private HealthPoint healthPoint;
-    private AIController AIController;
+    private HealthPoint _healthPoint;
+    private MonoBehaviour[] _Components;
 
     protected UnityAction<bool> _onDashInput;
 
@@ -17,13 +18,9 @@ public class EnemyController : CharacterController
 
     private void Awake()
     {
-        if (TryGetComponent(out healthPoint))
+        if (TryGetComponent(out _healthPoint))
         {
-            healthPoint.OnDeaded += DeadEnemy;
-        }
-        if (!TryGetComponent(out AIController))
-        {
-            AIController = null;
+            _healthPoint.OnDeaded += DeadEnemy;
         }
     }
 
@@ -49,22 +46,27 @@ public class EnemyController : CharacterController
 
     private void Start()
     {
-        if (TryGetComponent(out healthPoint))
+        if (TryGetComponent(out _healthPoint))
         {
-            healthPoint.OnDeaded += DeadEnemy;
+            _healthPoint.OnDeaded += DeadEnemy;
         }
     }
 
     private void DeadEnemy()
     {
         StartCoroutine(DeleteEnemy());
-        AIController.enabled = false;
-        healthPoint.enabled = false;
+
+        gameObject.layer = 6; // "EnemyNoCollision"
+         
+        if (TryGetComponent(out AIController AI))
+        {
+            AI.enabled = false;
+        }
     }
 
     IEnumerator DeleteEnemy()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }

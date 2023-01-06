@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackBehavior : Behavior
@@ -24,7 +26,7 @@ public class AttackBehavior : Behavior
 
     public override void Execute()
     {
-        _enemyController.OnDashInputHandler();
+        _enemyController.OnAttackInputHandler();
     }
 
     private bool CheckDirection(float playerPositionX)

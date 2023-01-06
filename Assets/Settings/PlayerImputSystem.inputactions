@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "17d15e70-15e5-4a20-9297-e40c37fd4500",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -39,7 +39,7 @@
                     "id": "978bfe49-cc26-4a3d-ab7b-7d7a29327403",
                     "path": "<Gamepad>/leftStick/x",
                     "interactions": "",
-                    "processors": "StickDeadzone,NormalizeVector2",
+                    "processors": "StickDeadzone",
                     "groups": ";Gamepad",
                     "action": "Move",
                     "isComposite": false,
@@ -112,23 +112,89 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "53730a28-ea0e-4020-9ff6-22ce90bccafc",
+                    "name": "Space And S",
+                    "id": "c02bf03c-b580-47f2-a5c0-0cd19f93a070",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "2c1b74bf-20dc-44d0-a2ff-8b2f941d9cd5",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "defd5e0c-9ed6-42c2-b11e-57b7efc5c25b",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Jump",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "5dc47fd8-2dfb-48ad-8071-33a9df9e1942",
+                    "id": "b0cff421-4cb0-4066-b9d8-7627559aa0f8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Button South And Left Stick Down",
+                    "id": "c54a5714-0f07-451b-b358-b9e8c2e60dd5",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "ba4bf316-df2f-4c83-8b61-022a57519394",
+                    "path": "<Gamepad>/leftStick/down",
+                    "interactions": "",
+                    "processors": "AxisDeadzone",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "f1ee8277-5034-4477-a66d-b90f075afa2d",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad;Joystick",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "58e1edf8-e11b-453b-b4a3-62053f4b3258",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
