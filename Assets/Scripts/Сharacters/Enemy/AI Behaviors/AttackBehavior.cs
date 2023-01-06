@@ -5,6 +5,8 @@ using UnityEngine;
 public class AttackBehavior : Behavior
 {
     [SerializeField] private PlayerDetectZone _playerDetect;
+    [SerializeField] private float _minAggressivenessTime;
+    private float _lastAggressivenessTime;
     private EnemyController _enemyController;
     private BaseMoveAction _moveAction;
 
@@ -18,8 +20,15 @@ public class AttackBehavior : Behavior
     {
         if (_playerDetect.TryGetPlayer(out Vector2 playerPosition) && CheckDirection(playerPosition.x))
         {
+            //_lastAggressivenessTime = Time.time;
+
             return true;
         }
+
+        //if (_lastAggressivenessTime + _minAggressivenessTime > Time.time)
+        //{
+        //    return true;
+        //}
 
         return false;
     }

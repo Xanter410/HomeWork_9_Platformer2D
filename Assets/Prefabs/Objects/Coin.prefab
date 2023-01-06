@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1696b3ae408f4e4a9b224f503815f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinCounter: {fileID: 11400000, guid: 04df328314e1641458e4be06cfcc18d8, type: 2}
+  _onCoinPickUp: {fileID: 11400000, guid: 0c9798023e35bec469da9207ebd6c1f7, type: 2}
 --- !u!114 &7774709559144223416
 MonoBehaviour:
   m_ObjectHideFlags: 0

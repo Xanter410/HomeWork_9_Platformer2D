@@ -6,6 +6,8 @@ public class PlayerController : CharacterController
 {
     private HealthPoint healthPoint;
 
+    [SerializeField] private GameEvent _onPlayerDeaded; 
+
     protected UnityAction<bool> _onJumpAndDownInput;
     public event UnityAction<bool> OnJumpAndDownInput
     {
@@ -48,8 +50,6 @@ public class PlayerController : CharacterController
 
     private void DeadPlayer()
     {
-        Debug.Log("Персонаж погиб");
-        //healthPoint.enabled = false;
-        //this.enabled = false;
+        _onPlayerDeaded.TriggerEvent();
     }
 }

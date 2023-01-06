@@ -1,22 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Coin : Interactable
 {
     private static readonly int DeadedAnimator = Animator.StringToHash("deaded");
 
-    [SerializeField] private CoinCounter _coinCounter;
+    [SerializeField] private GameEvent _onCoinPickUp;
     private Animator _animator;
     bool _isActive = false;
-
-    private UnityAction _onCoinPickup;
-    public event UnityAction OnCoinPickup
-    {
-        add { _onCoinPickup += value; }
-        remove { _onCoinPickup -= value; }
-    }
 
     private void Awake()
     {
@@ -29,16 +20,15 @@ public class Coin : Interactable
         {
             _isActive = true;
 
-            _coinCounter.CoinScore++;
-
-            _animator.SetBool(DeadedAnimator, true);
-            _onCoinPickup?.Invoke();
+            _onCoinPickUp.TriggerEvent();
 
             StartCoroutine(DeleteCoin());
         }
     }
     IEnumerator DeleteCoin()
     {
+        _animator.SetBool(DeadedAnimator, true);
+
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
