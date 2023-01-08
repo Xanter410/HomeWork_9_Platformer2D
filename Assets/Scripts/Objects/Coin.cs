@@ -6,6 +6,10 @@ public class Coin : Interactable
     private static readonly int DeadedAnimator = Animator.StringToHash("deaded");
 
     [SerializeField] private GameEvent _onCoinPickUp;
+
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _audioCoinPickUp;
+    [SerializeField, Range(0f, 1f)] protected float _volumeFall = 1f;
     private Animator _animator;
     bool _isActive = false;
 
@@ -27,9 +31,10 @@ public class Coin : Interactable
     }
     IEnumerator DeleteCoin()
     {
+        _audioSource.PlayOneShot(_audioCoinPickUp);
         _animator.SetBool(DeadedAnimator, true);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }

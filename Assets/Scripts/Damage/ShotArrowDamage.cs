@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ShotArrowDamage : BaseCollisionDamage
@@ -6,7 +7,14 @@ public class ShotArrowDamage : BaseCollisionDamage
     [SerializeField] private float _intervalBetweenDamage = 0f;
     [SerializeField] private float _pushForce;
 
+    [SerializeField] private AudioSource _audioSource;
+    private SpriteRenderer _spriteRenderer;
     private float _previousDamageTime;
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public override void MakeDamage(HealthPoint characterHealthPoint)
     {
@@ -18,16 +26,20 @@ public class ShotArrowDamage : BaseCollisionDamage
         var forceVelocity = new Vector2(normal.normalized.x * _pushForce, 0);
         _collision.rigidbody.velocity += forceVelocity;
 
-        ArrowDestroy();
+        StartCoroutine(ArrowDestroy());
     }
 
     protected override void ToUndamaged() 
     {
-        ArrowDestroy();
+        StartCoroutine(ArrowDestroy());
     }
 
-    private void ArrowDestroy()
+    IEnumerator ArrowDestroy()
     {
+        _spriteRenderer.enabled = false;
+        _audioSource.Play();
+
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
 }

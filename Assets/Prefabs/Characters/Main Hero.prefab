@@ -87,6 +87,8 @@ GameObject:
   - component: {fileID: 6384786572710308857}
   - component: {fileID: 6384786572710308861}
   - component: {fileID: 6384786572710308834}
+  - component: {fileID: 6384786572878883189}
+  - component: {fileID: 6384786572878883188}
   m_Layer: 8
   m_Name: Main Hero
   m_TagString: Player
@@ -422,6 +424,136 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxValue: 3
+--- !u!82 &6384786572878883189
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384786572710308854}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -6925585175552868518, guid: ab2a2b3f3fbfaa44987670c0aa33f983, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6384786572878883188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384786572710308854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53084e35c93e44147a70a03c721e8888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSourceEffects: {fileID: 6384786572878883189}
+  _audioClipMove: {fileID: 8300000, guid: 6767a98008b882c448e20e2da4a8d76a, type: 3}
+  _volumeMove: 0.6
+  _audioClipDead: {fileID: 8300000, guid: 9856c4d979f2f434299577ce26796a25, type: 3}
+  _volumeDead: 1
+  _audioClipTakeHit: {fileID: 8300000, guid: 41f9a7c861a1c7c4e96aeafcb6ac5c37, type: 3}
+  _volumeTakeHit: 0.8
+  _audioClipsSwordSwing:
+  - {fileID: 8300000, guid: 60490665c76121c45a1bf62abdd62612, type: 3}
+  - {fileID: 8300000, guid: 64a6aff68b4adb744b75e438c8b17f0b, type: 3}
+  - {fileID: 8300000, guid: e32217b37dca9f9418ff0fbb97bbcacd, type: 3}
+  _volumeSwordSwing: 1
+  _audioClipsJump:
+  - {fileID: 8300000, guid: 981b7bc86e820334192aab7d70ec6a3f, type: 3}
+  - {fileID: 8300000, guid: 890fc88bec8c6974eb6e3505e631b959, type: 3}
+  - {fileID: 8300000, guid: b8ecaab902af6d546ad4b60fc459a5d4, type: 3}
+  - {fileID: 8300000, guid: 8c8dc31519b8c994dbbb44c41dc9b788, type: 3}
+  _volumeJump: 0.8
+  _audioClipsFall:
+  - {fileID: 8300000, guid: a0f25780fe303ec459a2321e254c641c, type: 3}
+  - {fileID: 8300000, guid: cfc0437af9b462e48bb4b93b4a0ca1ba, type: 3}
+  _volumeFall: 0.6
 --- !u!1 &6384786573066483991
 GameObject:
   m_ObjectHideFlags: 0
