@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _doEnemyTakeDamage: 0
   _doPlayerTakeDamage: 1
-  _damage: 0
+  _damage: 1
   _intervalBetweenDamage: 1
   _pushForce: 5
 --- !u!82 &557577155

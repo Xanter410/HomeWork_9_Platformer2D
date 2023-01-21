@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 1863012931509191487}
   - component: {fileID: 226106019}
   - component: {fileID: 226106018}
+  - component: {fileID: 6627231555921318655}
   m_Layer: 7
   m_Name: Skeleton With Bow
   m_TagString: Enemy
@@ -628,3 +629,20 @@ MonoBehaviour:
   _volumeTakeHit: 1
   _audioClipShot: {fileID: 8300000, guid: 5aff54901cac462429bd3c60c4bdbef4, type: 3}
   _volumeShot: 1
+--- !u!114 &6627231555921318655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863012931509191476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c76a2469d4889c408c421200f1e147b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doEnemyTakeDamage: 0
+  _doPlayerTakeDamage: 1
+  _damage: 1
+  _intervalBetweenDamage: 1
+  _pushForce: 5

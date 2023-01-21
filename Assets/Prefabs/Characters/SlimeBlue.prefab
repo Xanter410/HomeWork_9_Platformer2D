@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 6124926090881323489}
   - component: {fileID: 118055614}
   - component: {fileID: 118055615}
+  - component: {fileID: 1653943191373971180}
   m_Layer: 7
   m_Name: SlimeBlue
   m_TagString: Enemy
@@ -393,6 +394,23 @@ MonoBehaviour:
   _volumeTakeHit: 1
   _audioClipDash: {fileID: 8300000, guid: f99b69a1c7d93bb40ad15dc4c3d4ba77, type: 3}
   _volumeDash: 1
+--- !u!114 &1653943191373971180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124926090881323493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c76a2469d4889c408c421200f1e147b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _doEnemyTakeDamage: 0
+  _doPlayerTakeDamage: 1
+  _damage: 1
+  _intervalBetweenDamage: 1
+  _pushForce: 5
 --- !u!1 &6124926091055404544
 GameObject:
   m_ObjectHideFlags: 0
