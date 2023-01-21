@@ -24,7 +24,10 @@ public abstract class BaseTriggerDamage : MonoBehaviour
         {
             if (go.TryGetComponent<HealthPoint>(out var characterHealthPoint))
             {
-                MakeDamage(characterHealthPoint);
+                if (characterHealthPoint.IsAlive)
+                {
+                    MakeDamage(characterHealthPoint);
+                }
             }
             else
             {

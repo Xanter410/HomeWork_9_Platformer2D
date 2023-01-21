@@ -7,6 +7,7 @@ public class HealthPoint : MonoBehaviour
     [SerializeField] private int _maxValue = 1;
     private Animator _animator;
     private int _currentValue;
+
     private static readonly int _deadedAnimator = Animator.StringToHash("deaded");
     private static readonly int _takeDamageAnimator = Animator.StringToHash("takeDamage");
 
@@ -14,7 +15,7 @@ public class HealthPoint : MonoBehaviour
     public int MaxValue => _maxValue;
     public int CurrentValue => _currentValue;
     public bool IsAlive => _currentValue > 0;
-
+   
     private event UnityAction _onValueChanged;
     public event UnityAction OnValueChanged
     {
@@ -47,6 +48,7 @@ public class HealthPoint : MonoBehaviour
     public void Dead()
     {
         ChangeValue(0);
+        CheckIsDeaded();
     }
 
     private void ChangeValue(int newValue)
@@ -61,6 +63,11 @@ public class HealthPoint : MonoBehaviour
         {
             _animator.SetBool(_deadedAnimator, true);
             _onDeaded?.Invoke();
+
+            if (TryGetComponent<Rigidbody2D>(out Rigidbody2D rigidbody))
+            {
+                rigidbody.simulated = false;
+            }
         }
         else
         {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6384786572482134539}
   - component: {fileID: 6384786572482134537}
   - component: {fileID: 6384786572482134536}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: HitPoint_Right
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -297,44 +297,24 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 594d369d-3139-4ae0-b4d3-06def232018a
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionId: d2f6b82c-4142-4a74-b206-ac2dad6dbd05
+    m_ActionName: UI/Escape[/XInputControllerWindows/start,/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8e531517-1e68-4386-b70f-0c5aaeb7cb04
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7f790956-5edb-4f39-9f5a-fef19c0af27f
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 88c7d036-5573-4a98-b005-beb1837d8938
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c3872fcc-ba6a-4f46-97ab-ad255712a9b8
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 83ab2f05-cfd7-4008-8713-bd9754f2e6ac
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 54103525-fdc7-4d73-b25f-ec9a4f5f2cff
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 725b1d65-3643-4ca5-b5ee-a8196baa085f
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: c53a6974-a0ea-4b30-a870-2375560b9b78
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 60f9962c-84bb-4d42-919c-3e0831fb3288
-    m_ActionName: UI/TrackedDeviceOrientation
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
+        m_MethodName: ShowMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 34c44bd6-71d0-49ed-a769-8432ead284d8
+    m_ActionName: Player/Escape[/XInputControllerWindows/start,/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -352,7 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1bb0c4277d6764e8f32ab38af64533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onPlayerDeaded: {fileID: 11400000, guid: bd14c03a0ef67684cb68836cceba99ea, type: 2}
+  _onPlayerDeaded: {fileID: 11400000, guid: 48681c84dde52554ba8f8aa8a9740d36, type: 2}
+  _playerInput: {fileID: 6384786572710308856}
 --- !u!114 &6384786572710308863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +524,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 60490665c76121c45a1bf62abdd62612, type: 3}
   - {fileID: 8300000, guid: 64a6aff68b4adb744b75e438c8b17f0b, type: 3}
   - {fileID: 8300000, guid: e32217b37dca9f9418ff0fbb97bbcacd, type: 3}
-  _volumeSwordSwing: 1
+  _volumeSwordSwing: 0.5
   _audioClipsJump:
   - {fileID: 8300000, guid: 981b7bc86e820334192aab7d70ec6a3f, type: 3}
   - {fileID: 8300000, guid: 890fc88bec8c6974eb6e3505e631b959, type: 3}
@@ -565,7 +546,7 @@ GameObject:
   - component: {fileID: 6384786573066483988}
   - component: {fileID: 6384786573066483994}
   - component: {fileID: 6384786573066483989}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: HitPoint_Left
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}

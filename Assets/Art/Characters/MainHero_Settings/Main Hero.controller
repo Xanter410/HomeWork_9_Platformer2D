@@ -45,6 +45,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: takeDamage
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: deaded
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3432524381730718365}
   m_Solo: 0
@@ -569,6 +572,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: takeDamage
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: deaded
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6720698894019249840}
   m_Solo: 0
@@ -658,6 +664,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0.1
   - m_ConditionMode: 2
     m_ConditionEvent: grounded
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: deaded
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7020331048131020297}

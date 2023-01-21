@@ -16,7 +16,7 @@ TagManager:
   - EnemyNoCollision
   - Enemy
   - Player
-  - 
+  - HitTrigger
   - 
   - 
   - 

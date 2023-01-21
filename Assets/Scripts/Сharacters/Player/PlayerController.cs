@@ -6,7 +6,8 @@ public class PlayerController : CharacterController
 {
     private HealthPoint healthPoint;
 
-    [SerializeField] private GameEvent _onPlayerDeaded; 
+    [SerializeField] private GameEvent _onPlayerDeaded;
+    [SerializeField] private PlayerInput _playerInput;
 
     protected UnityAction<bool> _onJumpAndDownInput;
     public event UnityAction<bool> OnJumpAndDownInput
@@ -42,7 +43,8 @@ public class PlayerController : CharacterController
 
     private void Start()
     {
-        if(TryGetComponent(out healthPoint))
+        _playerInput.enabled = true;
+        if (TryGetComponent(out healthPoint))
         {
             healthPoint.OnDeaded += DeadPlayer;
         }
@@ -51,5 +53,6 @@ public class PlayerController : CharacterController
     private void DeadPlayer()
     {
         _onPlayerDeaded.TriggerEvent();
+        _playerInput.enabled = false; 
     }
 }

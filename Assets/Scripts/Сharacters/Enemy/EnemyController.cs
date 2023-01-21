@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class EnemyController : CharacterController
 {
     private HealthPoint _healthPoint;
-    private MonoBehaviour[] _Components;
 
     protected UnityAction<bool> _onDashInput;
 

@@ -1,41 +1,53 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class SceneTransition : MonoBehaviour
 {
-    private static SceneTransition instance;
-    private static bool shouldPlayOpeningAnimation = false;
+    [SerializeField] private AudioMixer _audioMixer;
+    private static SceneTransition _instance;
+    private static bool _shouldPlayOpeningAnimation = false;
+    private static float _musicVolume;
 
-    private Animator componentAnimator;
-    private AsyncOperation loadingSceneOperation;
+    private Animator _componentAnimator;
+    private AsyncOperation _loadingSceneOperation;
+
 
     public static void SwitchToScene(int sceneIndex)
     {
-        instance.componentAnimator.SetTrigger("sceneEnding");
+        float volume;
+        _instance._audioMixer.GetFloat("volumeMusic", out volume);
+        _musicVolume = Mathf.Pow(10, volume / 20);
 
-        instance.loadingSceneOperation = SceneManager.LoadSceneAsync(sceneIndex);
+        _instance.StartCoroutine(FadeMixerGroup.StartFade(_instance._audioMixer, "volumeMusic", 1f, 0f));
 
-        instance.loadingSceneOperation.allowSceneActivation = false;
+        _instance._componentAnimator.SetTrigger("sceneEnding");
+
+        _instance._loadingSceneOperation = SceneManager.LoadSceneAsync(sceneIndex);
+
+        _instance._loadingSceneOperation.allowSceneActivation = false;
     }
 
     private void Start()
     {
-        instance = this;
+        _instance = this;
 
-        componentAnimator = GetComponent<Animator>();
+        _componentAnimator = GetComponent<Animator>();
 
-        if (shouldPlayOpeningAnimation)
+        if (_shouldPlayOpeningAnimation)
         {
-            componentAnimator.SetTrigger("sceneOpening");
+            _instance.StartCoroutine(FadeMixerGroup.StartFade(_instance._audioMixer, "volumeMusic", 1f, _musicVolume));
 
-            shouldPlayOpeningAnimation = false;
+            _componentAnimator.SetTrigger("sceneOpening");
+
+            _shouldPlayOpeningAnimation = false;
         }
     }
 
     public void OnAnimationOver()
     {
-        shouldPlayOpeningAnimation = true;
+        _shouldPlayOpeningAnimation = true;
 
-        loadingSceneOperation.allowSceneActivation = true;
+        _loadingSceneOperation.allowSceneActivation = true;
     }
 }

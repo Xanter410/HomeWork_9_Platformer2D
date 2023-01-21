@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onCoinPickUp: {fileID: 11400000, guid: 0c9798023e35bec469da9207ebd6c1f7, type: 2}
-  _onPlayerDeaded: {fileID: 11400000, guid: bd14c03a0ef67684cb68836cceba99ea, type: 2}
+  _onPlayerDeaded: {fileID: 11400000, guid: 48681c84dde52554ba8f8aa8a9740d36, type: 2}
+  _onLevelCompleted: {fileID: 11400000, guid: bd14c03a0ef67684cb68836cceba99ea, type: 2}
